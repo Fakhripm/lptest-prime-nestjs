@@ -22,7 +22,7 @@ export const dataSourceOptions: DataSourceOptions = {
   migrations,
   // gen_random_uuid() is built into PostgreSQL 13+, so no extension (and no superuser) is needed.
   // 'pgcrypto' only makes TypeORM generate gen_random_uuid() defaults; installExtensions: false
-  // stops it running CREATE EXTENSION "pgcrypto" on every startup.
+  // stops it running CREATE EXTENSION IF NOT EXISTS "pgcrypto" on every startup.
   uuidExtension: 'pgcrypto',
   installExtensions: false,
   synchronize: false,
